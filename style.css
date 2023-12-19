@@ -1,0 +1,136 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:Roboto, monospace;
+    background-image:linear-gradient(#5edde5 50%, #5a95ff 50%);
+    height:100vh;
+    padding-top:4em;
+}
+.app{
+    width:min(90vw,500px);
+    margin:auto;
+}
+.container{
+    background: #f1f0ff;
+    padding:2em 2.5em;
+    border-radius:0.8em;
+    box-shadow:0 1em 2em rgba(0,0,0,0.3);
+}
+#wrapper{
+    /* border: 1px solid red; */
+    display:grid;
+    grid-template-columns:8fr 4fr;
+    gap:1em;
+}
+#inputtask{
+    width:100%;
+    padding: 0.9em 0.4em;
+    background: transparent;
+    border:none;
+    border-bottom:0.2em solid #d1d3d4;
+    outline: none;
+    color:#111111;
+    font-size: 0.9em;
+}
+#inputtask:focus{
+    border-bottom-color:#5a95ff;
+}
+#wrapper button{
+    position: relative;
+    outline: none;
+    border: none;
+    border-radius: 0.5em;
+    background: #5a95ff;
+    color:#fff;
+    font-size: 1em;
+    font-weight:500;
+    cursor:pointer;
+}
+
+.count-value{
+    color:#5a95ff;
+}
+#tasks{
+    margin-top: 0.8em;
+    border-radius:0.5em;
+    padding: 1em 0.5em;
+    width:100%;
+}
+.task{
+    display:grid;
+    grid-template-columns: 1fr 8fr 2fr 2fr;
+    gap:1em;
+    align-items: center;
+    padding: 0.5em 0.8em;
+    border-radius: 0.4em;
+    box-shadow: 0 0.3em 1em rgba(0,0,0,0.09);
+    background:#fff;
+    cursor:pointer;
+}
+.task:not(:first-child){
+    margin-top: 1em;
+}
+
+.task-check{
+    appearance: none;
+    height: 1.8em;
+    width: 1.8em;
+    border-radius: 50%;
+    border: 2px dotted #111111;
+}
+.task-check:before{
+    content:"";
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+.task-check:checked{
+    background-color: #5a95ff;
+    border-color: #5a95ff;
+}
+.task-check:checked:before{
+    position:absolute;
+    content: "\f00c";
+    color: #fff;
+    font-size: 0.8em;
+    font-family:"Font Awesome 5 Free";
+    font-weight: 900;
+}
+.taskname{
+    font: 0.9em;
+    font-weight:500;
+    word-break:break-all;
+}
+.task button{
+    border: none;
+    width:100%;
+    padding: 0.7em 0;
+    outline:none;
+    border-radius: 0.2em;
+    /* background: #5edde5; */
+    cursor: pointer;
+}
+.edit{
+    background: #5a95ff;
+}
+.delete{
+    background: #ff5c5c;
+}
+.completed{
+    text-decoration: line-through;
+    color: #a0a0a0;
+}
+.error{
+    text-align:center;
+    margin:auto;
+    margin-top:2em;
+    background:#fff;
+    padding:1em;
+    border-radius:0.8em;
+    color:#ff5c5c;
+    display: none;
+}
